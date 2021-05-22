@@ -1,6 +1,12 @@
 body {
     font-family: sans-serif;
 }
+
 .subtitulo {
     text-align: center;
+}
+
+#links-page {
+    float: right;
+    font-size: 30px;
 }
