@@ -19,21 +19,60 @@
 //. Um ângulo será considerado inválido se não tiver um valor positivo.
 
 
-let angA=90
-let angB=40
-let angC=50
-let somaTotal = angA + angB + angC;
-let angPositivo = angA > 0 && angB > 0 && angC > 0;
+// let angA = 90;
+// let angB = 40;
+// let angC = 50;
+// let somaTotal = angA + angB + angC;
+// let angPositivo = angA > 0 && angB > 0 && angC > 0;
 
-if(angPositivo){
-    if(somaTotal === 180)
-    console.log(true);
-}
+// if(angPositivo) {
+//     if(somaTotal===180) {
+//     console.log(true);
+// }
+// else {
+//     console.log(false);
+// }
+// else {
+//     console.log('Ângulo Inválido');
+// }
 
-else {
-    console.log(false);
-}
 
-else {
-    console.log('Ângulo Inválido');
+// 6 Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
+// - Como desafio, faça o programa funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
+// - Como dica, você pode pesquisar uma função que faz uma string ficar com todas as letras minúsculas (lower case) .
+// - Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
+// Exemplo: bishop (bispo) -> diagonals (diagonais)
+
+
+let xadrezTorre = "rei";
+
+switch (xadrezTorre.toLowerCase()) {
+  case "Rei":
+    console.log("Rei, movimenta uma casa por vez em qualquer sentido");
+    break;
+
+  case "Pião":
+    console.log("Pião, movimenta em diagonal e reto sempre pra frente");
+    break;
+
+  case "Bispo":
+    console.log("Bispo, movimenta em diagonal");
+    break;
+
+  case "Cavalo":
+    console.log("Cavalo, movimenta em diagonal e vertical desenhando um L no tabuleiro");
+    break;
+
+  case "Torre":
+    console.log("Torre, movimenta em vertical");
+    break;
+
+  case "Rainha":
+    console.log("Rainha, movimenta em diagonal e vertical");
+
+  default:
+    console.log("Peça inválida"); {
+
+    } 
 }
+  
