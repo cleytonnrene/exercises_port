@@ -44,35 +44,73 @@
 // Exemplo: bishop (bispo) -> diagonals (diagonais)
 
 
-let xadrezTorre = "rei";
+// let xadrezTorre = "rei";
 
-switch (xadrezTorre.toLowerCase()) {
-  case "Rei":
-    console.log("Rei, movimenta uma casa por vez em qualquer sentido");
-    break;
+// switch (xadrezTorre.toLowerCase()) {
+//   case "Rei":
+//     console.log("Rei, movimenta uma casa por vez em qualquer sentido");
+//     break;
 
-  case "Pião":
-    console.log("Pião, movimenta em diagonal e reto sempre pra frente");
-    break;
+//   case "Pião":
+//     console.log("Pião, movimenta em diagonal e reto sempre pra frente");
+//     break;
 
-  case "Bispo":
-    console.log("Bispo, movimenta em diagonal");
-    break;
+//   case "Bispo":
+//     console.log("Bispo, movimenta em diagonal");
+//     break;
 
-  case "Cavalo":
-    console.log("Cavalo, movimenta em diagonal e vertical desenhando um L no tabuleiro");
-    break;
+//   case "Cavalo":
+//     console.log("Cavalo, movimenta em diagonal e vertical desenhando um L no tabuleiro");
+//     break;
 
-  case "Torre":
-    console.log("Torre, movimenta em vertical");
-    break;
+//   case "Torre":
+//     console.log("Torre, movimenta em vertical");
+//     break;
 
-  case "Rainha":
-    console.log("Rainha, movimenta em diagonal e vertical");
+//   case "Rainha":
+//     console.log("Rainha, movimenta em diagonal e vertical");
 
-  default:
-    console.log("Peça inválida"); {
+//   default:
+//     console.log("Peça inválida"); {
 
-    } 
-}
+//     } 
+// }
   
+// 7 Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+// - Porcentagem >= 90 -> A
+// - Porcentagem >= 80 -> B
+// - Porcentagem >= 70 -> C
+// - Porcentagem >= 60 -> D
+// - Porcentagem >= 50 -> E
+// - Porcentagem < 50 -> F
+// - O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
+
+let notasFinais = -1;
+
+if (notasFinais >100 || notasFinais<0){
+  console.log("Nota Inválida");
+}
+
+else if(notasFinais >=90){
+  console.log("A");
+}
+
+else if(notasFinais >=80){
+  console.log("B");
+}
+
+else if(notasFinais >=70){
+  console.log("C");
+}
+
+else if(notasFinais >=60){
+  console.log("D");
+}
+
+else if(notasFinais >=50){
+  console.log("E");
+}
+
+else if(notasFinais <50){
+  console.log("F");
+}
