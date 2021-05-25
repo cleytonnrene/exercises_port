@@ -12,5 +12,5 @@ info['recorrente'] = 'Sim';
 // Valor esperado no console:
 
 for (let key in info) {
-    console.log(key);
+    console.log(info[key]);
 }
