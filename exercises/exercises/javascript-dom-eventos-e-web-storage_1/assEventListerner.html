@@ -1,57 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Exercício 5.3</title>
+  <meta charset="UTF-8">
+  <title>addEventListener</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class=flexy>
-      <div class="como-usar">
-        <span class="fonte">Instruções (leia tudo)
-        </span><br>Escreva o nome de uma cor na caixa <strong>(em inglês)</strong> e depois <strong>clique fora da caixa de texto</strong> em qualquer lugar, o evento usado foi o change e ele vai mudar a cor do quadrado aqui do lado direito:<br>
-        <input type=text id="input-texto"><br> Esse exemplo demonstra que devemos encontrar o <strong>melhor evento</strong> para nossos listeners, estamos tendo que clicar fora da caixa após digitar a cor, por conta de estarmos utilizando um evento que não
-        é o melhor para esse tipo de trabalho.<br><br> Experimente na aba JS aqui mesmo, <strong>trocar</strong> o evento <strong>'change'</strong>, pelo evento <strong>'keyup'</strong> e teste novamente.
-      </div>
-    
-      <div class="quadrado"></div>
-    
+    <h1>Spotrybefy</h1>
+    <h3 id="mySpotrybefy">Meu top 3 do Spotrybefy</h3>
+    <div class="container">
+      <div class="tech" id="divUm">Aqui está a primeira tecnologia que mais gostei.</div>
+      <div id="divDois">Aqui está a segunda tecnologia que mais gostei.</div>
+      <div id="divTres">Aqui está a terceira tecnologia que mais gostei.</div>
     </div>
-    <style>
-      .flexy {
+    <input type="text" id="input" placeholder="Alterar a primeira tecnologia">
+  <script src="main.js">
+      const divUm = document.getElementById('divUm');
+      const divDois = document.getElementById('divDois');
+      const divTres = document.getElementById('divTres');
+      const input = document.getElementById('input');
+      const myWebpage = document.getElementById('mySpotrybefy');
+
+    function handleChangeTech(event) {
+  const techElement = document.querySelector('.tech');
+  techElement.classList.remove('tech');
+  event.target.classList.add('tech');
+  input.value = '';
+}
+
+  divUm.addEventListener('click', handleChangeTech);
+  divDois.addEventListener('click', handleChangeTech);
+  divTres.addEventListener('click', handleChangeTech);
+
+/*
+ Copie esse arquivo e edite apenas ele;
+ Crie uma função que adicione a classe 'tech' ao elemento selecionado;
+1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
+ Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+com a classe 'tech';
+ Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
+redirecione para alguma página;
+1. Que tal redirecionar para seu portifólio?
+ Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
+a cor do mesmo;
+
+Segue abaixo um exemplo do uso de event.target:
+*/
+
+function resetText(event) {
+  // O Event é passado como um parâmetro para a função.
+  event.target.innerText = 'Opção reiniciada';
+  // O event possui várias propriedades, porém a mais usada é o event.target,
+  // que retorna o objeto que disparou o evento.
+}
+
+divUm.addEventListener('dblclick', resetText);
+// Não precisa passar o parâmetro dentro do addEventListener. O próprio
+// navegador fará esse trabalho por você, não é legal? Desse jeito, o
+// event.target na nossa função retornará o objeto 'divUm'.
+  </script>
+  <style>
+      body {
+  align-items: center;
+  background-color: #333;
+  color: white;
   display: flex;
-  font-size: 20px;
-}
-#input-texto {
-  width: 80%;
-  line-height: 24px;
-}
-.fonte {
-  font-size: 32px;
-  font-weight: 700;
-}
-.como-usar {
-  border: 1px solid black;
-  width: 75%;
-}
-.quadrado {
-  border: 2px solid black;
-  width: 100px;
-  height: 100px;
-  margin: 10px auto;
+  flex-flow: column wrap;
+  font-family: Montserrat, sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
 }
 
-</style>
-<script>
-  const inputTexto = document.querySelector("#input-texto");
-const divQuadrado = document.querySelector(".quadrado");
-
-function corQuadrado() {
-  divQuadrado.style.backgroundColor = inputTexto.value;
+.container {
+  display: flex;
+  flex-flow: row wrap;
 }
 
-inputTexto.addEventListener("keyup", corQuadrado);
+.container div {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  height: 200px;
+  justify-content: center;
+  margin: 2px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.25s ease;
+  width: 200px;
+}
 
-</script>
+h1 {
+  font-size: 48px;
+  color: #2fc18c;
+}
+
+.container div:nth-of-type(1) {
+  background-color: #2fc18c;
+  color: #333;
+}
+
+.container div:nth-of-type(2) {
+  background-color: #006dfb;
+}
+
+.container div:nth-of-type(3) {
+  background-color: #41197f;
+}
+
+input {
+  border: 1px solid #333;
+  margin: 10px 0;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+
+input:hover {
+  border: 1px solid #2fc18c;
+}
+
+input:focus {
+  border: 1px solid #006dfb;
+  outline: 2px solid #006dfb;
+}
+
+.tech {
+  transform: translateY(-20px);
+}
+  </style>
   </body>
 </html>
